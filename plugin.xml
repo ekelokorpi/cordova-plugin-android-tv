@@ -36,6 +36,9 @@
             <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
         </config-file>
 
-        <hook type="after_prepare" src="patch.js"/>
+        <preference name="TV_ISGAME" default="true" />
+        <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+            <application android:isGame="$TV_ISGAME" android:banner="@drawable/banner" />
+        </edit-config>
     </platform>
 </plugin>
